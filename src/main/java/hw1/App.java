@@ -18,7 +18,14 @@ public class App {
     }
     public static String encryption(String []word,String searchword,Integer swapright,int reverseword) 
     {
-    
+      if(word.length==0) 
+      {
+          return null;
+      } 
+      if(swapright<0) 
+        {
+           return null;
+        }
        int counter=0;
        for(int i=0;i<word.length;i++) 
         {
