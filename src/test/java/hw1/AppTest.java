@@ -15,28 +15,26 @@ class AppTest {
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
     }
     @Test
-    public void testFound()
+    public void testEmptyArray()
      {
-         ArrayList<Integer>array=new ArrayList<>(Arrays.asList(1, 2, 3,4));
-         assertTrue(App.search(array, 4));
-     }
-     @Test
-    public void testNotFound()
-     {
-         ArrayList<Integer>array=new ArrayList<>(Arrays.asList(1, 2, 3,4));
-         assertFalse(App.search(array, 5));
-     }
-     @Test
-     public void testEmptyArray()
-      {
-           ArrayList<Integer> array=new ArrayList<>();
-           assertFalse(App.search(array,1));
+         String []array=new String[0] ;
+         assertNull(App.encryption(array,"hello", 2,1));
 
-      }
-      @Test
-      public void testNull()
-       {
-           assertFalse(App.search(null,1));
-           
-       }
+     }
+     @Test
+     public void testfoundAndnotReverse()
+     {
+         String [] arr={"hello","world","this is","my","project"};
+         assertEquals("ifmmp",App.encryption(arr,"hello", 1, 0));
+
+     }
+     @Test
+     public void testfoundAndReverse()
+     {
+        String [] arr={"hello","world","this is","my","project"};
+        assertEquals("pmmfi",App.encryption(arr,"hello", 1, 1));
+     }
+  
+   
+    
 }

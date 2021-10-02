@@ -3,27 +3,66 @@
  */
 package hw1;
 
-import java.util.ArrayList;
 import java.lang.Integer;
 
 public class App {
     public String getGreeting() {
-        return "Hello world.";
+        return "Hello! welcome my program";
     }
 
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
+        String [] arr = {"hello","world","hi","i","am","melin","it is my","first,project"};
+		System.out.println(encryption(arr,"hi",29,0));
       
     }
-   
-    public static boolean search(ArrayList<Integer>array,int e)
-         {
-              System.out.println("inside search");
-         if(array==null) return false;
-         for(int elt :array)
-          {
-             if(elt==e) return true;
-          }
-          return false;
+    public static String encryption(String []word,String searchword,Integer swapright,int reverseword) 
+    {
+    
+       int counter=0;
+       for(int i=0;i<word.length;i++) 
+        {
+           if(word[i].equals(searchword)==true) 
+            {
+               counter++; 
+               
+               String word2="";
+               for(int j=0;j<word[i].length();j++) 
+                {
+                   if(word[i].charAt(j)+swapright>=122) 
+                   {
+                       
+                       word2=word2+(char)(word[i].charAt(j)+swapright-26);
+                       
+                   }
+                   
+                   else {
+                      word2=word2+(char)(word[i].charAt(j)+swapright);
+                   }
+                }
+               
+               word[i]=word2;
+               if(reverseword==0) 
+                {
+                   return word[i];
+                }
+               if(reverseword==1) 
+                {
+                   String wordreverse="";
+                   for(int k=word2.length()-1;k>=0;k--) 
+                    {
+                       wordreverse=wordreverse+word2.charAt(k);
+                    }
+                   word[i]=wordreverse;
+                   return word[i];
+                }
+               
+            }
+       
         }
+ 
+           return null;
+   
+    }
+   
 }
