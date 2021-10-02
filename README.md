@@ -11,3 +11,5 @@ If 0 is entered with the second integer parameter taken later, it leaves the sam
 Running 
 gradle build
 gradle run
+
+[![Build Status](https://app.travis-ci.com/MelinEss/hw1.svg?branch=main)](https://app.travis-ci.com/MelinEss/hw1)
