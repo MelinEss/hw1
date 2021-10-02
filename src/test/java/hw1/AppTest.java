@@ -40,6 +40,12 @@ class AppTest {
         String []arr1={"hello","world","this is","my","project"};
         assertNull(App.encryption(arr1,"klm", -1, 1));
       }
-   
+      @Test
+      public void testNotFound()
+      {
+          String []arr1={"hello","world","this is","my","project"};
+          assertNull(App.encryption(arr1,"klm", 1, 1));
+      }
+      
     
 }

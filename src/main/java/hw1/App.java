@@ -26,6 +26,10 @@ public class App {
         {
            return null;
         }
+        if(reverseword<0||reverseword>1) 
+        {
+           return null;
+        }
        int counter=0;
        for(int i=0;i<word.length;i++) 
         {
